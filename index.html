@@ -11,8 +11,7 @@
 </head>
 <body ng-app="inGramAssessment">
     <div class="main row" ng-controller="MainController">
-        <div class="left-panel col-md-6">
-            <!-- Your first column here -->
+        <div class="left-panel col-md-6">            
             <ul style="list-style: none;">
                 <li ng-repeat="textBox in textBoxes">
                     <minieditor ng-model="textBox.content" options="options"></minieditor>
@@ -22,8 +21,7 @@
                 </li>
             </ul>
           </div>
-          <div class="right-panel col-md-6">
-            <!-- Your second column here -->
+          <div class="right-panel col-md-6">            
             <div>                
               <p ng-bind-html="renderHtml(textBoxes[0].content)"></p>                                                       
               </br>
