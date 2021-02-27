@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<head>
+    <title>inGram Assessment</title>    
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="styles.css" rel="stylesheet"/>
+    <link href=https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css rel="stylesheet"/>    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.0/angular.js"></script>
+    <link rel="stylesheet" href="src/angular-minieditor.css">
+    <script src="src/angular-minieditor.js"></script>
+</head>
+<body ng-app="inGramAssessment">
+    <div class="main row" ng-controller="MainController">
+        <div class="left-panel col-md-6">
+            <!-- Your first column here -->
+            <ul style="list-style: none;">
+                <li ng-repeat="textBox in textBoxes">
+                    <minieditor ng-model="textBox.content" options="options"></minieditor>
+                </li>
+                <li>
+                  <button type="button" ng-click="addTextBoxes()"><span class='fa fa-plus'></span></button>                                   
+                </li>
+            </ul>
+          </div>
+          <div class="right-panel col-md-6">
+            <!-- Your second column here -->
+            <div>                
+              <p ng-bind-html="renderHtml(textBoxes[0].content)"></p>                                                       
+              </br>
+              <p ng-bind-html="renderHtml(textBoxes[1].content)"></p> 
+              <br/>
+              <p ng-bind-html="renderHtml(textBoxes[2].content)"></p> 
+              <br/>
+              <p ng-bind-html="renderHtml(textBoxes[3].content)"></p> 
+              <br/>
+              <p ng-bind-html="renderHtml(textBoxes[4].content)"></p> 
+              <br/>
+              <p ng-bind-html="renderHtml(textBoxes[5].content)"></p> 
+              <br/>
+              <p ng-bind-html="renderHtml(textBoxes[6].content)"></p> 
+              <br/>               
+            </div>
+          </div>
+    </div>
+    <script src="./src/app.js"></script>    
+    <script src="./src/controllers/MainController.js"></script>
+</body>
