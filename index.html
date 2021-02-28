@@ -8,20 +8,24 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.0/angular.js"></script>
     <link rel="stylesheet" href="src/angular-minieditor.css">
     <script src="src/angular-minieditor.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&display=swap" rel="stylesheet">
 </head>
 <body ng-app="inGramAssessment">
     <div class="main row" ng-controller="MainController">
-        <div class="left-panel col-md-6">            
+        <div class="left-panel col-md-6"> 
+          <h1>Text Editor</h1>           
             <ul style="list-style: none;">
                 <li ng-repeat="textBox in textBoxes">
                     <minieditor ng-model="textBox.content" options="options"></minieditor>
                 </li>
                 <li>
-                  <button type="button" ng-click="addTextBoxes()"><span class='fa fa-plus'></span></button>                                   
+                  <button style="margin: 5%;" type="button" ng-click="addTextBoxes()"><span class='fa fa-plus'></span></button>                                   
                 </li>
             </ul>
           </div>
-          <div class="right-panel col-md-6">            
+          <div class="right-panel col-md-6">
+            <h1>Preview of Text</h1>             
             <div>                
               <p ng-bind-html="renderHtml(textBoxes[0].content)"></p>                                                       
               </br>
